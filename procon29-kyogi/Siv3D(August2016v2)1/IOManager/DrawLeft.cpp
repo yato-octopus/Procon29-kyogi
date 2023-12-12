@@ -7,7 +7,7 @@
 DrawLeft::DrawLeft()
 {
 	font(15);
-	//agent‚Ì‰æ‘œ‚ğƒ[ƒh
+	//agentï¿½Ì‰æ‘œï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½h
 	//Texture fri_ob(L"image/friend.png");
 	//Texture ene_ob(L"image/enemy.png");
 	//fri = fri_ob;
@@ -19,7 +19,7 @@ void DrawLeft::drawLeftManager(void)
 	Setting *setting;
 	setting = setting->getSetting();
 
-	//Map‚Ì•\¦
+	//Mapï¿½Ì•\ï¿½ï¿½
 	drawMap();
 	drawTilePoint();
 	if (setting->turnFlag == true) {
@@ -34,14 +34,14 @@ void DrawLeft::drawMap(void) {
 	Map * map;
 	map = map->getMap();
 
-	//ƒ}ƒX‚Ì•\¦À•W‚Ì•â•
+	//ï¿½}ï¿½Xï¿½Ì•\ï¿½ï¿½ï¿½ï¿½ï¿½Wï¿½Ì•â•
 	const int pos_sup = MASU_SIZE + 5;
 
-	//ƒ}ƒbƒv‚Ìƒ^ƒCƒ‹‚ğ•\¦i“ñdƒ‹[ƒv‚Åc‰¡‚ğŠÇ—j
+	//ï¿½}ï¿½bï¿½vï¿½Ìƒ^ï¿½Cï¿½ï¿½ï¿½ï¿½\ï¿½ï¿½ï¿½iï¿½ï¿½dï¿½ï¿½ï¿½[ï¿½vï¿½Åcï¿½ï¿½ï¿½ï¿½ï¿½Ç—ï¿½ï¿½j
 	for (int i = 0; i < 12;i++) {
 		for (int j = 0; j < 12; j++) {
 			
-			//State‚Ìó‘Ô‚É‘Î‚µ‚Ä•\¦‚·‚éƒ}ƒX‚Ì•ÏX
+			//Stateï¿½Ìï¿½Ô‚É‘Î‚ï¿½ï¿½Ä•\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½}ï¿½Xï¿½Ì•ÏX
 			switch (map->board[i][j].Status) {
 			case Masu::Non:
 				//draw non map
@@ -65,11 +65,11 @@ void DrawLeft::drawMap(void) {
 		}
 	}
 
-	//ƒ^ƒCƒ‹‚Ì˜g‚ğ•\¦
+	//ï¿½^ï¿½Cï¿½ï¿½ï¿½Ì˜gï¿½ï¿½\ï¿½ï¿½
 	for (int i = 0; i <= MAX_MAP_SIZE; i++) {
-		//cƒ‰ƒCƒ“‚Ì•\¦
+		//ï¿½cï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½Ì•\ï¿½ï¿½
 		Line(2.5, 2.5 + i * pos_sup , MAX_MAP_SIZE * pos_sup, 2.5 + i * pos_sup).draw(5 , Palette::Black);
-		//cƒ‰ƒCƒ“‚Ì•\¦
+		//ï¿½cï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½Ì•\ï¿½ï¿½
 		Line(2.5 + i * pos_sup, 2.5 , 2.5 + i * pos_sup, MAX_MAP_SIZE * pos_sup).draw(5 , Palette::Black);
 	}
 	//System::Update();
@@ -77,7 +77,7 @@ void DrawLeft::drawMap(void) {
 
 void DrawLeft::drawAgent(void)
 {
-	//Map‚Éd‚Ë‚ÄAgentˆÊ’u‚Ì•\¦(—¼•û)
+	//Mapï¿½Édï¿½Ë‚ï¿½Agentï¿½Ê’uï¿½Ì•\ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½)
 	Map *map;
 	map = map->getMap();
 	int pos_sup = MASU_SIZE + 5;
@@ -93,14 +93,14 @@ void DrawLeft::drawAgent(void)
 			fri1.draw(map->agents[i].position.second * pos_sup + 5, map->agents[i].position.first * pos_sup + 5);
 			break;
 		case Agent::friend2:
-			//friend ‚Ìê‡
+			//friend ï¿½Ìê‡
 			fri2.draw(map->agents[i].position.second * pos_sup + 5 ,map->agents[i].position.first * pos_sup + 5);
 			break;
 		case Agent::enemy1 :
 			ene1.draw(map->agents[i].position.second * pos_sup + 5, map->agents[i].position.first * pos_sup + 5);
 			break;
 		case Agent::enemy2 :
-			//enemy‚Ìê‡
+			//enemyï¿½Ìê‡
 			ene2.draw(map->agents[i].position.second * pos_sup + 5 , map->agents[i].position.first * pos_sup + 5);
 			break;
 		default:
@@ -111,7 +111,7 @@ void DrawLeft::drawAgent(void)
 
 void DrawLeft::drawTilePoint(void)
 {
-	//TilePoint‚ğMap‚Éd‚Ë‚éŒ`‚Å•\¦
+	//TilePointï¿½ï¿½Mapï¿½Édï¿½Ë‚ï¿½`ï¿½Å•\ï¿½ï¿½
 	Map *map;
 	map = map->getMap();
 
@@ -119,10 +119,10 @@ void DrawLeft::drawTilePoint(void)
 
 	for (int i = 0; i < map->Vertical; i++) {
 		for (int j = 0; j < map->Width; j++) {
-			//MapŠO‚Ìƒ^ƒCƒ‹‚¶‚á‚È‚¢‚È‚çTrue
+			//Mapï¿½Oï¿½Ìƒ^ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È‚ï¿½ï¿½È‚ï¿½True
 			//Status Other : 3
 			if (map->board[i][j].Status != Masu::Other) {
-				//ƒ^ƒCƒ‹ƒ|ƒCƒ“ƒg‚ğ•\¦
+				//ï¿½^ï¿½Cï¿½ï¿½ï¿½|ï¿½Cï¿½ï¿½ï¿½gï¿½ï¿½\ï¿½ï¿½
 				font(map->board[i][j].TilePoint).draw(10 + pos_sup * j, 10 + pos_sup * i, Palette::Yellow);
 			}
 		}
@@ -131,16 +131,16 @@ void DrawLeft::drawTilePoint(void)
 
 void DrawLeft::drawMovableTile(void)
 {
-	//©•ª‚ÌƒG[ƒWƒFƒ“ƒg‚ªˆÚ“®o—ˆ‚éêŠ‚Ì•\¦
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ÌƒGï¿½[ï¿½Wï¿½Fï¿½ï¿½ï¿½gï¿½ï¿½ï¿½Ú“ï¿½ï¿½oï¿½ï¿½ï¿½ï¿½êŠï¿½Ì•\ï¿½ï¿½
 }
 
-//ƒG[ƒWƒFƒ“ƒg‚ÌŸ‚ÌŒó•â’n‚ğ•\¦
+//ï¿½Gï¿½[ï¿½Wï¿½Fï¿½ï¿½ï¿½gï¿½Ìï¿½ï¿½ÌŒï¿½ï¿½nï¿½ï¿½\ï¿½ï¿½
 void DrawLeft::drawNextPosition(void)
 {
 	
 }
 
-//–¡•ûƒG[ƒWƒFƒ“ƒg‚ÌÅ‘Pè‚ğ•\¦‚·‚é
+//ï¿½ï¿½ï¿½ï¿½ï¿½Gï¿½[ï¿½Wï¿½Fï¿½ï¿½ï¿½gï¿½ÌÅ‘Pï¿½ï¿½ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 void DrawLeft::drawBestTile(int AgentNum)
 {
 	Map *map;
